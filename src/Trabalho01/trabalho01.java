@@ -20,24 +20,27 @@ public class trabalho01
 			
 			switch (scanKeyboard.nextLine())
 			{
+				case "A":
 				case "a":
 					Cesar.imprimirMenuCesar();
 					
 					opcaoValida = true;
 					break;
 					
+				case "B":
 				case "b":
 					Vernan.imprimirMenuVernan();
 					
 					opcaoValida = true;
 					break;
 					
+				case "C":
 				case "c":
 					AnalisadorDeFrequencia.imprimirMenuAnalisadorDeFrequencia();
 					
 					opcaoValida = true;
 					break;
-		
+					
 				default:
 					System.out.println("Opção náo é válida. Escolha novamente\n");
 					
@@ -47,4 +50,20 @@ public class trabalho01
 		
 		return;
 	}
+	
+	public static String convertToASCII2(String text) 
+	{
+        return text.replaceAll("[áãâ]", "a")
+                   .replaceAll("[éê]", "e")
+	               .replaceAll("[í]", "i")
+	               .replaceAll("[óõ]", "o")
+	               .replaceAll("[ú]", "u")
+	               .replaceAll("[ÁÃÂ]", "A")
+	               .replaceAll("[ÉÊ]", "E")
+	               .replaceAll("[Í]", "I")
+	               .replaceAll("[ÓÕ]", "O")
+	               .replaceAll("[Ú]", "U")
+	               .replace('ç', 'c')
+	               .replace('Ç', 'C');
+    }
 }
