@@ -3,6 +3,7 @@ package Trabalho02;
 import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Cliente 
 {
@@ -11,7 +12,7 @@ public class Cliente
 	
 	static String[] senhasDescartaveis = new String[5];
 	
-	public static void imprimirMenu()
+	public static void imprimirMenu() throws InterruptedException
 	{
 		int minNow, minPrev;
         
@@ -54,7 +55,7 @@ public class Cliente
 		                {
 		                    if ((senhasDescartaveis[i-1].substring(0,5)).equals(senhaCliente)) 
 		                    {
-		                        System.out.println("***Senha válida***");
+		                        System.out.println("***Senha válida***\n");
 		                    
 		                        //Se achou a senha, da um update do no senhas Disponíveis para que 
 		                        // as senhas depois dessa não possam mais ser usadas.
@@ -64,10 +65,19 @@ public class Cliente
 		                    }
 		                }
 		                
-		                if(!senhaValida)
-		                    System.out.println("Senha inválida!");
+		                if(senhaValida)
+		                {
+		                	System.out.println("Aguarde um minuto para poder entrar com outra senha!");
+		                	
+		                	TimeUnit.MINUTES.sleep(1);
+		                }
 		                
-		                senhaValida = false;
+		                else
+		                {
+		                    System.out.println("Senha inválida!\n");
+		                
+		                    senhaValida = false;
+		                }
 		                
 		                calendar = Calendar.getInstance();
 		                
