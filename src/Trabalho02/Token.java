@@ -18,7 +18,7 @@ public class Token
 	
 	public static void imprimirMenu()
 	{
-		users.put("e54h6t61sgGdp65UX/4Iuw==", "4QrcOUm6Wau+VuBX8g+IPg==");
+		users.put("e54h6t61sgGdp65UX/4Iuw==", "4QrcOUm6Wau+VuBX8g+IPg=="); // <Leonardo, 123456>
 		
 		try 
 		{
@@ -84,20 +84,17 @@ public class Token
         {
             System.out.println("Senha autenticada com sucesso.");
             
-            int op;
-            
             int minNow, minPrev;
             int senhasDisponiveis = 5;
             String senhaAtt;           
             
             while(true)
             {
-                System.out.println("Digite 1 para gerar uma nova senha e 2 para terminar o programa");
+                System.out.println("1. Gerar uma nova senha\n2. Terminar o programa");
                 
-                op = scanKeyboard.nextInt();
-                
-                if(op == 1)
+                switch(scanKeyboard.nextInt())
                 {
+                case 1:
                 	calendar = Calendar.getInstance();
                 	
                     minNow = minPrev = calendar.get(Calendar.MINUTE);
@@ -112,16 +109,14 @@ public class Token
 
                     senhasDisponiveis = 5;
                     
-                    //Enquanto o tempo for menor que 1minuto e o numero de senhas disponiveis for maior que 0
+                    //Enquanto o tempo for menor que 1 minuto e o numero de senhas disponiveis for maior que 0
                     do
                     {
                         if (senhasDisponiveis > 0)
                         {
                             System.out.println("Você deseja uma nova senha? \nDigite 1 para pegar uma nova senha e 2 para voltar ao menu anterior");
                             
-                            op = scanKeyboard.nextInt();
-                            
-                            if(op == 1)
+                            if(scanKeyboard.nextInt() == 1)
                             {
                                 System.out.println("A nova senha é " + senhasDescartaveis[senhasDisponiveis-1].substring(0,5)+"\n\n\n\n\n\n\n\n\n");
                                 
@@ -130,8 +125,8 @@ public class Token
                                 if(senhasDisponiveis == 0) 
                                 	System.out.println("Suas tentativas acabaram. Em no máximo 1 min novas senhas serão geradas");
                             }
-                            else if(op == 2)
-                                 break;   
+                            else
+                            	break;   
                         }
 
                         calendar = Calendar.getInstance();
@@ -142,12 +137,14 @@ public class Token
                     
                     if(minNow != minPrev)
                         System.out.println("Senhas expiradas!");
-                }
-                else if (op==2)
-                {
-                    System.out.println("O programa será encerrado. Obrigada por utilizar o token");
                     
-                    return;
+                	break;
+                	
+                	default:
+                		
+                		System.out.println("O programa será encerrado. Obrigada por utilizar o token");
+                		
+                		return;
                 }
             }
         }  

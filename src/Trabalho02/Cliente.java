@@ -54,18 +54,18 @@ public class Cliente
 		                {
 		                    if ((senhasDescartaveis[i-1].substring(0,5)).equals(senhaCliente)) 
 		                    {
-		                        System.out.println("Senha válida!");
+		                        System.out.println("***Senha válida***");
 		                    
 		                        //Se achou a senha, da um update do no senhas Disponíveis para que 
 		                        // as senhas depois dessa não possam mais ser usadas.
-		                        senhasDisponiveis = i-1;
+		                        senhasDisponiveis = 0/*i-1*/;
 		                        
 		                        senhaValida = true;
 		                    }
 		                }
 		                
 		                if(!senhaValida)
-		                    System.out.println("Senha inválida");
+		                    System.out.println("Senha inválida!");
 		                
 		                senhaValida = false;
 		                
