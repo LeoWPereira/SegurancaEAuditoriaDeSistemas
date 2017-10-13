@@ -45,7 +45,7 @@ public class trabalho02
 					break;
 					
 				default:
-					System.out.println("Opção inválida. Escolha novamente\n");
+					System.out.println("Opção invalida. Escolha novamente\n");
 					
 					break;
 			}

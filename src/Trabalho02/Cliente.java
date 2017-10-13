@@ -39,12 +39,12 @@ public class Cliente
 		                senhasDescartaveis[i] = trabalho02.base64Encode(trabalho02.algorithm.digest(senhasDescartaveis[i - 1].getBytes("UTF-8")));
 		             
 		            senhasDisponiveis = 5;
-		            
-		            senhaValida= false;
 
 		            //Enquanto o tempo for menor que 1 minuto e o numero de senhas disponiveis for maior que 0
 		            do 
 		            {
+		            	senhaValida= false;
+		            	
 		                System.out.println("Digite sua senha: ");
 		                
 		                senhaCliente = scanKeyboard.next();
@@ -55,28 +55,19 @@ public class Cliente
 		                {
 		                    if ((senhasDescartaveis[i-1].substring(0,5)).equals(senhaCliente)) 
 		                    {
-		                        System.out.println("***Senha válida***\n");
+		                        System.out.println("***Senha valida***\n");
 		                    
 		                        //Se achou a senha, da um update do no senhas Disponíveis para que 
 		                        // as senhas depois dessa não possam mais ser usadas.
-		                        senhasDisponiveis = 0/*i-1*/;
+		                        senhasDisponiveis = i-1;
 		                        
 		                        senhaValida = true;
 		                    }
 		                }
 		                
-		                if(senhaValida)
+		                if(!senhaValida)
 		                {
-		                	System.out.println("Aguarde um minuto para poder entrar com outra senha!");
-		                	
-		                	TimeUnit.MINUTES.sleep(1);
-		                }
-		                
-		                else
-		                {
-		                    System.out.println("Senha inválida!\n");
-		                
-		                    senhaValida = false;
+		                    System.out.println("Senha invalida");
 		                }
 		                
 		                calendar = Calendar.getInstance();

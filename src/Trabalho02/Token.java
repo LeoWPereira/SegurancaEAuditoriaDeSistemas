@@ -29,7 +29,7 @@ public class Token
 			while(!opcaoValida)
 			{
 				System.out.println("a. Sim\n"
-								+  "b. Não");
+								+  "b. Nao");
 				
 				switch (scanKeyboard.nextLine())
 				{
@@ -48,7 +48,7 @@ public class Token
 						break;
 						
 					default:
-						System.out.println("Opção inválida. Escolha novamente\n");
+						System.out.println("Opcao invalida. Escolha novamente\n");
 						
 						break;
 				}
@@ -65,13 +65,13 @@ public class Token
 	
 	public static void menuUsuario() throws UnsupportedEncodingException
 	{
-		System.out.println("Digite o seu nome de usuário: ");
+		System.out.println("Digite o seu nome de usuario: ");
 		
 		byte []algorithmHelper = trabalho02.algorithm.digest(scanKeyboard.next().getBytes("UTF-8"));
         
 		if(!users.containsKey(trabalho02.base64Encode(algorithmHelper)))
 		{
-			System.out.println("Usuário inválido");
+			System.out.println("Usuario invalido");
 			
 			return;
 		}
@@ -114,16 +114,16 @@ public class Token
                     {
                         if (senhasDisponiveis > 0)
                         {
-                            System.out.println("Você deseja uma nova senha? \nDigite 1 para pegar uma nova senha e 2 para voltar ao menu anterior");
+                            System.out.println("1. Pegar uma nova senha\n2. Voltar ao menu anterior");
                             
                             if(scanKeyboard.nextInt() == 1)
                             {
-                                System.out.println("A nova senha é " + senhasDescartaveis[senhasDisponiveis-1].substring(0,5)+"\n\n\n\n\n\n\n\n\n");
+                                System.out.println("A nova senha e: " + senhasDescartaveis[senhasDisponiveis-1].substring(0,5)+"\n\n\n\n\n\n\n\n\n");
                                 
                                 senhasDisponiveis--;
                                 
                                 if(senhasDisponiveis == 0) 
-                                	System.out.println("Suas tentativas acabaram. Em no máximo 1 min novas senhas serão geradas");
+                                	System.out.println("Senhas disponiveis acabaram. Em no maximo 1 min novas senhas serao geradas");
                             }
                             else
                             	break;   
@@ -142,7 +142,7 @@ public class Token
                 	
                 	default:
                 		
-                		System.out.println("O programa será encerrado. Obrigada por utilizar o token");
+                		System.out.println("O programa sera encerrado!");
                 		
                 		return;
                 }
@@ -157,26 +157,26 @@ public class Token
 		System.out.println("Vamos configurar o Token!");
 		
 		
-        System.out.println("Primeiramente, digite a sua senha que será utilizada como seed (semente): ");
+        System.out.println("Primeiramente, digite a sua senha que sera utilizada como seed (semente): ");
         
         byte[] senhaBytes= trabalho02.algorithm.digest(scanKeyboard.next().getBytes("UTF-8"));
         
         
-        System.out.println("\n\nAgora entre com um nome de usuário!");
+        System.out.println("\n\nAgora entre com um nome de usuario!");
 	    
         byte[] userBytes = trabalho02.algorithm.digest(scanKeyboard.next().getBytes("UTF-8"));
         
         
-        System.out.println("\n\nAgora entre com uma senha para o seu usuário!");
+        System.out.println("\n\nAgora entre com uma senha para o seu usuario!");
 		    
         byte[] localBytes= trabalho02.algorithm.digest(scanKeyboard.next().getBytes("UTF-8"));
         
         
         
-        System.out.println("A senha semente é: " + trabalho02.base64Encode(senhaBytes));
+        System.out.println("A senha semente e: " + trabalho02.base64Encode(senhaBytes));
         
-        System.out.println("O usuário é: " + trabalho02.base64Encode(userBytes));
-        System.out.println("A senha local é: " + trabalho02.base64Encode(localBytes));
+        System.out.println("O usuário e: " + trabalho02.base64Encode(userBytes));
+        System.out.println("A senha local e: " + trabalho02.base64Encode(localBytes));
         
         return;
     }

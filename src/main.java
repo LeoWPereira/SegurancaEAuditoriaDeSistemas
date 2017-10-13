@@ -17,7 +17,7 @@ public class main
 {
 	private static Scanner scanKeyboard = new Scanner(System.in);
 	
-	public static void main(String[] args) throws InterruptedException, NoSuchAlgorithmException
+	public static void main(String[] args) throws Exception
 	{
 		imprimirInfoAluno();
 		
@@ -41,7 +41,7 @@ public class main
 		return;
 	}
 	
-	public static void imprimirMenuTrabalhos() throws InterruptedException, NoSuchAlgorithmException
+	public static void imprimirMenuTrabalhos() throws Exception
 	{
 		System.out.println("Escolha o trabalho a ser executado:");
 		

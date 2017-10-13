@@ -1,0 +1,78 @@
+DESKeyManager
+	-> AG Service: 	- encryptStrToStr()
+			- encrytptByteToByte()
+			- decryptToStr()
+			- decrytptByteToByte()
+
+	-> TGS Service:	- encryptStrToStr()
+			- encrytptByteToByte()
+			- decryptToStr()
+			- decrytptByteToByte()
+
+
+
+	-> Cliente:	- encryptStrToStr()
+			- encrytptByteToByte()
+			- decryptToStr()
+			- decrytptByteToByte()
+
+
+	
+	-> Serviço:	- encryptStrToStr()
+			- encrytptByteToByte()
+			- decryptToStr()
+			- decrytptByteToByte()
+
+EnviaUDP
+	-> AG Service: 	- enviaMensagemUDP()
+
+	-> TGS Service:	- enviaMensagemUDP()
+
+	-> Cliente:	- enviaMensagemUDP()
+
+	-> Serviço:	- enviaMensagemUDP()
+
+RecebeUDP
+	-> AG Service: 	- run()
+
+	-> TGS Service:	- run()
+
+	-> Cliente:	- run()
+
+	-> Serviço:	- run()
+
+
+
+
+
+AG Service:     - lerChaveArquivo()
+                - geradorDeChave()
+                - responderCliente()
+                - converterIntEmByte()
+                - append()
+
+TGS Service:    - lerChaveArquivo()
+                - geradorDeChave()
+                - responderCliente()
+                - verificaSeTicketVálido()
+                - converterIntEmByte()
+                - append()
+
+Cliente:        - lerChaveArquivo()
+                - receberMensagemAG()
+                - receberMensagemTGS()
+                - receberMensagemServico()
+                - converterIntEmByte()
+                - append()
+
+Serviço:        - lerChaveArquivo()
+                - geradorDeChave()
+                - responderCliente()
+                - verificaSeTicketVálido()
+                - converterIntEmByte()
+                - append()
+
+
+
+
+
