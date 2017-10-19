@@ -37,7 +37,7 @@ public class DES_Manager
 		return new sun.misc.BASE64Encoder().encode(stringCriptografada);
 	}
 	
-	public byte[] criptografarByte(byte [] mensagem) throws Exception 
+	public byte[] criptografarByte(byte[] mensagem) throws Exception 
 	{
 		 return cifra_criptografada.doFinal(mensagem);
 	}
@@ -45,13 +45,14 @@ public class DES_Manager
 	public String decriptografarString(String string) throws Exception 
 	{
 		// decriptografa mensagem para o padrao UTF8
+		@SuppressWarnings("restriction")
 		byte[] stringUTF8	=	cifra_decriptografada.doFinal(new sun.misc.BASE64Decoder().decodeBuffer(string));
 		
 		return new String(stringUTF8, "UTF8");
 	}
 	
-	public byte[] decriptografarByte(byte [] mensagem) throws Exception 
-	{
+	public byte[] decriptografarByte(byte[] mensagem) throws Exception 
+	{		
 		return cifra_decriptografada.doFinal(mensagem);
 	}
 	

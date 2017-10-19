@@ -13,17 +13,17 @@ import Trabalho04.ServiceServer;
 
 public class trabalho04
 {
-	public static 	boolean	debug									= true;
+	public static 	boolean	debug										= true;
 	
-	public static 	int 	portaEnviaUDPCliente 					= 6005;
-	public static 	int 	portaEnviaUDPAgentServer 				= 6001;
-	public static 	int 	portaEnviaUDPTicketGrantingServer 		= 6002;
-	public static 	int 	portaEnviaUDPServiceServer 				= 6003;
+	public static 	int 	portaEnviaUDPCliente 						= 6000;
+	public static 	int 	portaEnviaUDPAgentServer 					= 6001;
+	public static 	int 	portaEnviaUDPTicketGrantingServer 			= 6002;
+	public static 	int 	portaEnviaUDPServiceServer_SOMAINTEIROS 	= 6003;
 	
-	public static 	int 	portaRecebeUDPCliente 					= 6205;
-	public static 	int 	portaRecebeUDPAgentServer 				= 6201;
-	public static 	int 	portaRecebeUDPTicketGrantingServer 		= 6202;
-	public static 	int 	portaRecebeUDPServiceServer 			= 6203;
+	public static 	int 	portaRecebeUDPCliente 						= 6200;
+	public static 	int 	portaRecebeUDPAgentServer 					= 6201;
+	public static 	int 	portaRecebeUDPTicketGrantingServer 			= 6202;
+	public static 	int 	portaRecebeUDPServiceServer_SOMAINTEIROS 	= 6203;
 	
 	public static 	int 	tempoDeAcesso							= 10;	// 10 minutos de tempo de requisicao
 	
@@ -38,6 +38,11 @@ public class trabalho04
 		AGENT_SERVER,
 		TICKET_GRANTING_SERVER,
 		SERVICE_SERVER		
+	}
+	
+	public enum servicosRequisitados
+	{
+		SOMAR_NUMEROS
 	}
 	
 	public enum tiposSocket

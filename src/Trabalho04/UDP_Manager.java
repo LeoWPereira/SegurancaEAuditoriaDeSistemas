@@ -73,22 +73,22 @@ public class UDP_Manager extends Thread
 		switch(this.tipoServico)
 		{
 			case CLIENTE:
-				System.out.println("Cliente enviou uma mensagem!");
+				System.out.println("Cliente enviou uma mensagem!\n\n");
 				
 				break;
 			
 			case AGENT_SERVER:
-				System.out.println("Agent Server enviou uma mensagem!");
+				System.out.println("Agent Server enviou uma mensagem!\n\n");
 				
 				break;
 			
 			case SERVICE_SERVER:
-				System.out.println("Service Server enviou uma mensagem!");
+				System.out.println("Service Server enviou uma mensagem!\n\n");
 
 				break;
 			
 			case TICKET_GRANTING_SERVER:
-				System.out.println("Ticket Granting Server enviou uma mensagem!");
+				System.out.println("Ticket Granting Server enviou uma mensagem!\n\n");
 				
 				break;
 			
@@ -147,8 +147,6 @@ public class UDP_Manager extends Thread
 				switch(this.tipoServico)
 				{
 					case CLIENTE:
-						System.out.println("Cliente recebeu a mensagem " + mensagemRecebida[0]);
-		                
 						byte[] mensagemCriptografada;
 						
 						switch((int) mensagemRecebida[0])
@@ -203,7 +201,7 @@ public class UDP_Manager extends Thread
 						break;
 					
 					case AGENT_SERVER:
-						System.out.print("Agent Server recebeu a mensagem: " + mensagemRecebida[0]);
+						System.out.println("\n\nAgent Server recebeu a mensagem: " + mensagemRecebida[0]);
 						
 						// Recebeu mensagem do cliente 
 						if((int)mensagemRecebida[0] == 1)
@@ -212,7 +210,7 @@ public class UDP_Manager extends Thread
 						break;
 					
 					case SERVICE_SERVER:
-						System.out.print("Service Server recebeu a mensagem: " + mensagemRecebida[0]);
+						System.out.println("\n\nService Server recebeu a mensagem: " + mensagemRecebida[0]);
 						
 						// Recebeu mensagem do cliente 
 						if((int)mensagemRecebida[0] == 5)
@@ -224,7 +222,7 @@ public class UDP_Manager extends Thread
 							byte[] ticketServico = Arrays.copyOfRange(mensagemRecebida, 
 																	  17, 
 																	  33);
-		                    
+							
 							serviceServer.responderCliente(mensagemCliente, 
 														   ticketServico);
 						}
@@ -232,7 +230,7 @@ public class UDP_Manager extends Thread
 						break;
 					
 					case TICKET_GRANTING_SERVER:	                
-		                System.out.println("Ticket Granting Server recebeu a mensagem " + mensagemRecebida[0]);
+		                System.out.println("\n\nTicket Granting Server recebeu a mensagem " + mensagemRecebida[0]);
 		                
 		                // Recebeu mensagem do cliente
 		                if ((int) mensagemRecebida[0] == 3)
